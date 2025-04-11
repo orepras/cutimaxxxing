@@ -35,7 +35,7 @@ Tech stack yang dipakai untuk membuat Cutimaxxxing:
 
 1. Clone repositori
    ```bash
-   git clone https://github.com/yourusername/cutimaxxxing.git
+   git clone https://github.com/orepras/cutimaxxxing.git
    cd cutimaxxxing
 
 2. Install dependensi
