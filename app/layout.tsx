@@ -60,14 +60,19 @@ export default function RootLayout({
               <div className="container mx-auto px-4 py-6">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                   <p className="text-muted-foreground">
-                    © 2025 Prasaja | Merasa terbantu? Kamu bisa donasi ke{" "}
+                    © 2025 <a
+                      href="https://sintaksis.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >Sintaksis.studio</a> | Merasa terbantu? Kamu bisa {" "}
                     <a
                       href="https://saweria.co/orepras"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-500 hover:underline"
                     >
-                      saweria
+                      donasi ke saweria
                     </a>
                   </p>
                   <div className="flex gap-6">
@@ -77,24 +82,9 @@ export default function RootLayout({
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-foreground"
                     >
-                      Website
+                      Cek website personal Prasaja
                     </Link>
-                    <Link
-                      href="https://prasaja.com/writing"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-foreground"
-                    >
-                      Copywriting
-                    </Link>
-                    <Link
-                      href="https://prasaja.com/contact"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-foreground"
-                    >
-                      Kontak
-                    </Link>
+                    
                   </div>
                 </div>
               </div>

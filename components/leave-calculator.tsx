@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, CalendarCheck, CalendarClock, CalendarDays, FileText, CalendarPlus } from "lucide-react"
+import { Calendar, CalendarCheck, CalendarClock, CalendarDays, FileText, CalendarPlus, ArrowRight } from "lucide-react"
 import { calculateOptimalLeave, formatDate } from "@/lib/utils"
 import type { LeaveRecommendation } from "@/lib/types"
 import { getHolidaysByYear } from "@/lib/holidays"
@@ -240,7 +240,7 @@ export default function LeaveCalculator() {
           <CalendarClock className="h-12 w-12 text-muted-foreground mb-4" />
           <h3 className="text-xl font-medium mb-2">Belum Ada Rekomendasi</h3>
           <p className="text-muted-foreground max-w-md">
-            Masukkan jumlah hari cuti yang tersedia dan klik tombol "Hitung Rekomendasi Cuti" untuk mendapatkan
+            Masukkan jumlah hari cuti yang kamu punya, lalu  klik "Hitung Rekomendasi Cuti" untuk mendapatkan
             rekomendasi cuti terbaik.
           </p>
         </div>

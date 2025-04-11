@@ -116,19 +116,7 @@ export default function Home() {
             </TabsContent>
 
             {/* Bottom navigation */}
-            <div className="mt-12 flex justify-center">
-              <Button
-                onClick={handleNextTab}
-                size="lg"
-                className="group bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 px-8 py-6 text-lg"
-              >
-                <span className="flex items-center">
-                  {getNextTab().icon}
-                  Lanjut ke {getNextTab().label}
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Button>
-            </div>
+            
           </Tabs>
         </div>
       </div>
