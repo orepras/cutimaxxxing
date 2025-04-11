@@ -1,11 +1,19 @@
 import type React from "react"
 import "@/app/globals.css"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Noto_Serif } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import Link from "next/link"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: '--font-inter',
+})
+
+const notoSerif = Noto_Serif({ 
+  subsets: ["latin"],
+  variable: '--font-noto-serif',
+})
 
 export const metadata: Metadata = {
   title: "Cutimaxxxing - Kalkulator Optimalisasi Cuti Indonesia",
@@ -20,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${notoSerif.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <div className="min-h-screen bg-background">
             <header className="border-b">

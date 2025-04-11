@@ -16,6 +16,43 @@ import { calculateOptimalLeave, formatDate } from "@/lib/utils"
 import type { LeaveRecommendation } from "@/lib/types"
 import { getHolidaysByYear } from "@/lib/holidays"
 
+// Function to generate ICS content
+function generateICSContent(recommendation: LeaveRecommendation) {
+  const startDate = new Date(recommendation.leaveDates[0])
+  const endDate = new Date(recommendation.leaveDates[recommendation.leaveDates.length - 1])
+  
+  // Format dates for ICS
+  const formatDateForICS = (date: Date) => {
+    return date.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '')
+  }
+
+  return `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Leave Calculator//EN
+BEGIN:VEVENT
+DTSTART:${formatDateForICS(startDate)}
+DTEND:${formatDateForICS(endDate)}
+SUMMARY:Cuti ${recommendation.totalDays} Hari
+DESCRIPTION:${recommendation.description}
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR`
+}
+
+// Function to download ICS file
+function downloadICS(recommendation: LeaveRecommendation) {
+  const icsContent = generateICSContent(recommendation)
+  const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = `cuti-${formatDate(new Date(recommendation.leaveDates[0]))}.ics`
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
+  URL.revokeObjectURL(url)
+}
+
 const formSchema = z.object({
   availableLeaveDays: z.coerce
     .number()
@@ -181,14 +218,12 @@ export default function LeaveCalculator() {
                       <span>{recommendation.leaveDates.length} hari cuti</span>
                     </div>
                     <div className="flex gap-2">
-                      <Button variant="outline" size="sm" className="flex items-center h-9">
-                        <FileText className="mr-1 h-4 w-4" />
-                        Buat Surat
-                      </Button>
+                      
                       <Button
                         variant="default"
                         size="sm"
                         className="flex items-center h-9 bg-blue-600 hover:bg-blue-700"
+                        onClick={() => downloadICS(recommendation)}
                       >
                         <CalendarPlus className="mr-1 h-4 w-4" />
                         Simpan ke Kalender

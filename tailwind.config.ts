@@ -19,6 +19,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)'],
+        serif: ['var(--font-noto-serif)'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
