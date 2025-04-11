@@ -119,7 +119,7 @@ export default function AboutPage() {
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-2xl font-semibold">Butuh solusi digital yang efektif?</h2>
             <p className="text-lg">
-              Saya menawarkan jasa web development dengan copywriting yang efektif membantu bisnis
+              Saya menawarkan jasa product development dengan copywriting yang efektif membantu bisnis
               meningkatkan konversi, engagement, dan menciptakan pengalaman digital yang berkesan bagi pengguna.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
