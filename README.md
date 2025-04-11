@@ -10,7 +10,7 @@ Cutimaxxxing adalah aplikasi web yang membantu karyawan Indonesia memaksimalkan 
 
 ## 🚀 Demo
 
-Kunjungi [Cutimaxxxing](https://cutimaxxxing.vercel.app) untuk menggunakan aplikasi ini.
+Kunjungi [Cutimaxxxing](https://cutimaxxxing.work) untuk menggunakan aplikasi ini.
 
 ## 💻 Teknologi
 
@@ -35,8 +35,8 @@ Tech stack yang dipakai untuk membuat Cutimaxxxing:
 
 1. Clone repositori
    ```bash
-   git clone https://github.com/orepras/cutimaxxxing.git
-   cd cutimaxxxing
+   git clone https://github.com/orepras/.git
+   cd 
 
 2. Install dependensi
   ```shellscript
@@ -58,7 +58,7 @@ Tech stack yang dipakai untuk membuat Cutimaxxxing:
 ## 📊 Struktur Proyek
 
 ```
-cutimaxxxing/
+/
 ├── app/                    # Next.js App Router
 │   ├── about/              # Halaman Tentang
 │   ├── faq/                # Halaman FAQ
