@@ -65,7 +65,7 @@ export default function Home() {
               <Card>
                 <CardHeader>
                   <CardTitle>Kalender Libur Nasional</CardTitle>
-                  <CardDescription>Lihat hari libur nasional dan weekend untuk merencanakan cuti Anda</CardDescription>
+                  <CardDescription>Lihat hari libur nasional dan weekend untuk merencanakan cutimu</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Suspense fallback={<div>Loading calendar...</div>}>
@@ -74,7 +74,7 @@ export default function Home() {
 
                   <div className="mt-12 bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 p-6 rounded-lg text-center">
                     <p className="text-lg font-medium mb-3">Banyak hari libur, kan? 🎉</p>
-                    <p className="mb-4">Yuk, coba hitung strategi cuti terbaik dengan kalkulator cuti kami!</p>
+                    <p className="mb-4">Yuk, coba hitung strategi cuti terbaik dengan kalkulator cuti!</p>
                     <Button
                       onClick={() => setActiveTab("calculator")}
                       className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700"

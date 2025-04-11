@@ -86,7 +86,7 @@ export default function HolidayCalendar() {
           onMonthChange={setMonth}
           className="rounded-md w-full max-w-full mx-auto md:text-lg lg:text-xl"
           components={{
-            Day: ({ date, ...props }) => (
+            Day: ({ date, displayMonth, ...props }) => (
               <div {...props} className="p-1 md:p-2 lg:p-3">
                 {renderDay(date)}
               </div>

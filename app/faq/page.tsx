@@ -99,11 +99,7 @@ export default function FAQPage() {
             <AccordionTrigger>Siapa yang membuat Cutimaxxxing?</AccordionTrigger>
             <AccordionContent>
               Cutimaxxxing dibuat oleh Prasaja, seorang UX writer dan front-end developer. Untuk informasi lebih lanjut
-              tentang pembuat, kunjungi halaman{" "}
-              <Link href="/about" className="text-blue-500 hover:underline">
-                Tentang
-              </Link>{" "}
-              atau kunjungi{" "}
+              tentang pembuat, kunjungi personal site saya, di{" "}
               <Link
                 href="https://prasaja.com"
                 className="text-blue-500 hover:underline"
