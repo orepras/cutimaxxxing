@@ -75,7 +75,7 @@ export default function AboutPage() {
             <CardHeader className="flex flex-row items-center gap-4">
               <div className="h-16 w-16 rounded-full overflow-hidden border-2 border-green-500">
                 <img
-                  src="/placeholder.svg?height=64&width=64"
+                  src="https://prasaja.com/images/prasaja-ava.png"
                   alt="Foto Profil Prasaja"
                   className="h-full w-full object-cover"
                 />
