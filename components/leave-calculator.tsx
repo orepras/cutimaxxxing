@@ -239,10 +239,17 @@ export default function LeaveCalculator() {
         <div className="flex flex-col items-center justify-center py-12 text-center">
           <CalendarClock className="h-12 w-12 text-muted-foreground mb-4" />
           <h3 className="text-xl font-medium mb-2">Belum Ada Rekomendasi</h3>
-          <p className="text-muted-foreground max-w-md">
+          <p className="text-muted-foreground max-w-md mb-4">
             Masukkan jumlah hari cuti yang kamu punya, lalu  klik "Hitung Rekomendasi Cuti" untuk mendapatkan
-            rekomendasi cuti terbaik.
+            rekomendasi cuti terbaik.  
           </p>
+          <p className="text-muted-foreground max-w-md mb-4">
+            Kamu bisa juga membuat template surat cuti lho!
+          </p>
+          <Button variant="outline" onClick={() => window.location.href = '/leave-letter'} className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white">
+            <FileText className="mr-2 h-4 w-4 text-white" />
+            Buat Template Surat Cuti
+          </Button>
         </div>
       )}
     </div>
