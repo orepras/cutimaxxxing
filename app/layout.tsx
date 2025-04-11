@@ -64,7 +64,7 @@ export default function RootLayout({
                       href="https://sintaksis.com/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className=" hover:underline"
+                      className="hover:underline"
                     >Sintaksis.studio</a> | Merasa terbantu? Kamu bisa {" "}
                     <a
                       href="https://saweria.co/orepras"
@@ -72,7 +72,7 @@ export default function RootLayout({
                       rel="noopener noreferrer"
                       className="text-blue-500 hover:underline"
                     >
-                     donasi ke saweria
+                      donasi ke saweria
                     </a>
                   </p>
                   <div className="flex gap-6">
@@ -82,8 +82,9 @@ export default function RootLayout({
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-foreground"
                     >
-                      Personal site Prasaja
+                      Cek website personal Prasaja
                     </Link>
+                    
                   </div>
                 </div>
               </div>
