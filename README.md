@@ -10,11 +10,11 @@ Cutimaxxxing adalah aplikasi web yang membantu karyawan Indonesia memaksimalkan 
 
 ## 🚀 Demo
 
-Kunjungi [Cutimaxxxing](https://cutimaxxxing.vercel.app) untuk melihat aplikasi dalam aksi.
+Kunjungi [Cutimaxxxing](https://cutimaxxxing.vercel.app) untuk menggunakan aplikasi ini.
 
 ## 💻 Teknologi
 
-Cutimaxxxing dibangun dengan teknologi modern:
+Tech stack yang dipakai untuk membuat Cutimaxxxing:
 
 - [Next.js](https://nextjs.org/) - React framework dengan fitur server-side rendering
 - [TypeScript](https://www.typescriptlang.org/) - JavaScript dengan type checking
