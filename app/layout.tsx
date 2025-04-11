@@ -4,6 +4,7 @@ import type { Metadata } from "next"
 import { Inter, Noto_Serif } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import Link from "next/link"
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ 
   subsets: ["latin"],
