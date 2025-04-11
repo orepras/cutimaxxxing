@@ -21,7 +21,6 @@ Tech stack yang dipakai untuk membuat Cutimaxxxing:
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 - [Shadcn UI](https://ui.shadcn.com/) - Komponen UI yang dapat digunakan kembali
 - [React Hook Form](https://react-hook-form.com/) - Form validation
-- [Zod](https://zod.dev/) - Schema validation
 - [jsPDF](https://github.com/parallax/jsPDF) - PDF generation
 
 ## 🛠️ Instalasi dan Local Development
