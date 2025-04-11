@@ -16,7 +16,7 @@ export default function FAQPage() {
 
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
-            <AccordionTrigger>Apa itu Cutimaxxxing?</AccordionTrigger>
+            <AccordionTrigger className="text-left">Apa itu Cutimaxxxing?</AccordionTrigger>
             <AccordionContent>
               Cutimaxxxing adalah aplikasi yang membantu karyawan Indonesia memaksimalkan hari libur nasional dengan
               strategi cuti yang efisien. Aplikasi ini memberikan rekomendasi kapan sebaiknya mengambil cuti untuk
@@ -25,7 +25,7 @@ export default function FAQPage() {
           </AccordionItem>
 
           <AccordionItem value="item-2">
-            <AccordionTrigger>Bagaimana cara kerja kalkulator cuti?</AccordionTrigger>
+            <AccordionTrigger className="text-left">Bagaimana cara kerja kalkulator cuti?</AccordionTrigger>
             <AccordionContent>
               Kalkulator cuti bekerja dengan menganalisis pola hari libur nasional dan weekend, kemudian menghitung
               kombinasi cuti terbaik untuk mendapatkan periode libur terpanjang dengan jumlah cuti minimal. Kalkulasi cutimaxxing memprioritaskan efisiensi cuti (jumlah hari libur dibagi jumlah hari cuti).
@@ -33,7 +33,7 @@ export default function FAQPage() {
           </AccordionItem>
 
           <AccordionItem value="item-3">
-            <AccordionTrigger>Apakah data hari libur nasional selalu diperbarui?</AccordionTrigger>
+            <AccordionTrigger className="text-left">Apakah data hari libur nasional selalu diperbarui?</AccordionTrigger>
             <AccordionContent>
               Ya, cutimaxxxing memperbarui data hari libur nasional setiap tahun berdasarkan keputusan pemerintah. Saat ini,
               aplikasi mendukung data untuk tahun 2024 dan 2025. Data untuk tahun-tahun berikutnya akan ditambahkan
@@ -42,7 +42,7 @@ export default function FAQPage() {
           </AccordionItem>
 
           <AccordionItem value="item-4">
-            <AccordionTrigger>Apakah aplikasi ini gratis?</AccordionTrigger>
+            <AccordionTrigger className="text-left">Apakah aplikasi ini gratis?</AccordionTrigger>
             <AccordionContent>
               Ya, Cutimaxxxing sepenuhnya gratis untuk digunakan. Jika kamu merasa terbantu dengan aplikasi ini, kamu
               dapat memberikan {" "}
@@ -56,7 +56,7 @@ export default function FAQPage() {
           </AccordionItem>
 
           <AccordionItem value="item-5">
-            <AccordionTrigger>Apakah rekomendasi cuti memperhitungkan kebijakan perusahaan?</AccordionTrigger>
+            <AccordionTrigger className="text-left">Apakah rekomendasi cuti memperhitungkan kebijakan perusahaan?</AccordionTrigger>
             <AccordionContent>
               Cutimaxxxing memberikan rekomendasi berdasarkan hari libur nasional dan weekend. Aplikasi ini tidak
               memperhitungkan kebijakan cuti spesifik perusahaanmu. Pastikan untuk menyesuaikan rekomendasi dengan
@@ -79,7 +79,7 @@ export default function FAQPage() {
           </AccordionItem>
 
           <AccordionItem value="item-6">
-            <AccordionTrigger>Bagaimana cara menggunakan template surat cuti?</AccordionTrigger>
+            <AccordionTrigger className="text-left">Bagaimana cara menggunakan template surat cuti?</AccordionTrigger>
             <AccordionContent>
               Isi formulir dengan data pribadi dan detail cutimu, pilih gaya penulisan yang diinginkan (formal,
               conversational, semi-formal, atau bahkan krama inggil!), lalu klik tombol "Generate Template Surat". Template yang dihasilkan
@@ -88,7 +88,7 @@ export default function FAQPage() {
           </AccordionItem>
 
           <AccordionItem value="item-7">
-            <AccordionTrigger>Apakah Cutimaxxxing mendukung sistem kerja selain 5 hari?</AccordionTrigger>
+            <AccordionTrigger className="text-left">Apakah Cutimaxxxing mendukung sistem kerja selain 5 hari?</AccordionTrigger>
             <AccordionContent>
               Saat ini, Cutimaxxxing dioptimalkan untuk sistem kerja 5 hari (Senin-Jumat). Kami berencana untuk
               menambahkan dukungan untuk sistem kerja lain seperti shift atau 6 hari kerja di masa mendatang.
@@ -96,7 +96,7 @@ export default function FAQPage() {
           </AccordionItem>
 
           <AccordionItem value="item-8">
-            <AccordionTrigger>Siapa yang membuat Cutimaxxxing?</AccordionTrigger>
+            <AccordionTrigger className="text-left">Siapa yang membuat Cutimaxxxing?</AccordionTrigger>
             <AccordionContent>
               Cutimaxxxing dibuat oleh Prasaja, seorang UX writer dan front-end developer. Untuk informasi lebih lanjut
               tentang pembuat, kunjungi personal site saya, di{" "}
@@ -126,7 +126,7 @@ export default function FAQPage() {
             >
               <Link href="https://prasaja.com/contact" target="_blank" rel="noopener noreferrer">
                 <MessageSquare className="mr-2 h-5 w-5" />
-                Hubungi Saya
+                Hubungi Prasaja
               </Link>
             </Button>
           </div>

@@ -63,6 +63,7 @@ export default function HeroSection({ scrollToCalculator }: { scrollToCalculator
       </div>
 
       {/* Benefits of taking leave section */}
+      <div>
       <div className="container mx-auto max-w-5xl mt-24">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Mengapa Cuti Itu Penting?</h2>
@@ -136,6 +137,7 @@ export default function HeroSection({ scrollToCalculator }: { scrollToCalculator
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
+      </div>
       </div>
 
       {/* For different user profiles section */}

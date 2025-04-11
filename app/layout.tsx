@@ -57,8 +57,7 @@ export default function RootLayout({
             </header>
             {children}
             <footer className="border-t mt-12">
-              <div className="container mx-auto px-4 py-6">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="container mx-auto px-4 py-6 text-center">
                   <p className="text-muted-foreground">
                     © 2025 <a
                       href="https://sintaksis.com/"
@@ -75,18 +74,7 @@ export default function RootLayout({
                       donasi ke saweria
                     </a>
                   </p>
-                  <div className="flex gap-6">
-                    <Link
-                      href="https://prasaja.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-foreground"
-                    >
-                      Cek website personal Prasaja
-                    </Link>
-                    
-                  </div>
-                </div>
+                
               </div>
             </footer>
           </div>

@@ -97,16 +97,7 @@ export default function AboutPage() {
                 <Button asChild variant="outline" className="flex gap-2">
                   <Link href="https://prasaja.com" target="_blank" rel="noopener noreferrer">
                     <Code className="h-4 w-4" />
-                    Kunjungi Website
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  className="flex gap-2 bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700"
-                >
-                  <Link href="https://prasaja.com#contact" target="_blank" rel="noopener noreferrer">
-                    <MessageSquare className="h-4 w-4" />
-                    Hubungi Saya
+                    Kunjungi Website Prasaja
                   </Link>
                 </Button>
               </div>
@@ -133,9 +124,9 @@ export default function AboutPage() {
                 size="lg"
                 className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700"
               >
-                <Link href="https://prasaja.com/contact" target="_blank" rel="noopener noreferrer">
+                <Link href="https://cal.com/prasaja/30min" target="_blank" rel="noopener noreferrer">
                   <ArrowRight className="mr-2 h-5 w-5" />
-                  Konsultasikan Proyek Anda
+                  Konsultasi Project
                 </Link>
               </Button>
             </div>
