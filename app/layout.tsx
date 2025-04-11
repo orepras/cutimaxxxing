@@ -5,6 +5,7 @@ import { Inter, Noto_Serif } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import Link from "next/link"
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -80,6 +81,8 @@ export default function RootLayout({
             </footer>
           </div>
         </ThemeProvider>
+        <Analytics/>
+        <SpeedInsights/>
       </body>
     </html>
   )
