@@ -16,10 +16,10 @@ Kunjungi [Cutimaxxxing](https://cutimaxxxing.work) untuk menggunakan aplikasi in
 
 Tech stack yang dipakai untuk membuat Cutimaxxxing:
 
-- [Next.js](https://nextjs.org/) - React framework dengan fitur server-side rendering
+- [Next.js](https://nextjs.org/) - React framework, dengan fitur server-side rendering
 - [TypeScript](https://www.typescriptlang.org/) - JavaScript dengan type checking
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [Shadcn UI](https://ui.shadcn.com/) - Komponen UI yang dapat digunakan kembali
+- [Shadcn UI](https://ui.shadcn.com/) - Komponen UI yang reusable
 - [React Hook Form](https://react-hook-form.com/) - Form validation
 - [jsPDF](https://github.com/parallax/jsPDF) - PDF generation
 
@@ -27,7 +27,7 @@ Tech stack yang dipakai untuk membuat Cutimaxxxing:
 
 ### Prasyarat
 
-- Node.js 18.x atau lebih baru
+- Node.js 18.x atau yang lebih baru
 - npm atau yarn
 
 ### Langkah-langkah
@@ -54,7 +54,7 @@ Tech stack yang dipakai untuk membuat Cutimaxxxing:
 4. Buka [http://localhost:3000](http://localhost:3000) di browser Anda
 
 
-## 📊 Struktur Proyek
+## 📊 Struktur Project
 
 ```
 /
