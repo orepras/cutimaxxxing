@@ -18,13 +18,12 @@ export default function AboutPage() {
         <div className="space-y-6">
           <h2 className="text-2xl font-semibold">Cerita di Balik Cutimaxxxing</h2>
           <p>
-            Cutimaxxxing lahir dari pengalaman pribadi saya sebagai karyawan yang selalu mencari cara untuk
-            memaksimalkan waktu liburan dengan cuti yang terbatas (paling banyak sih pernah dapat 14 hari cuti). Setiap awal
-            tahun, saya selalu membuat spreadsheet untuk merencanakan cuti tahunan dengan efisien.
-          </p>
+            Cutimaxxxing lahir dari pengalaman pribadi saya sebagai karyawan, yang sering merasa belum memaksimalkan cuti dengan baik. Padahal dengan jumlah cuti yang terbatas (paling banyak sih pernah dapat 14 hari cuti) saya rasa bisa memaksimalkan cuti dengan baik.
+            </p>
+            <p>Saat awal bulan, saya selalu iseng cek kalender untuk melihat hari libur. Padahal, ada pendekatan yang lebih efektif untuk memaksimalkan jatah cuti.
+            </p>
           <p>
-            Karena sepertinya keisengan tersebut cukup berguna untuk diri sendiri, saya memutuskan untuk membuat alat
-            yang bisa membantu sesama karyawan di Indonesia merencanakan cuti mereka dengan lebih baik.
+            Karena sepertinya keisengan tersebut cukup berguna untuk diri sendiri, saya memutuskan untuk membuat aplikasi yang bisa membantu sesama karyawan di Indonesia merencanakan cuti mereka dengan lebih baik.
           </p>
           </div>
 
