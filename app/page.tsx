@@ -1,6 +1,6 @@
 "use client"
 
-import { Suspense, useRef, useState } from "react"
+import { Suspense, useRef, useState, useEffect } from "react"
 import HolidayCalendar from "@/components/holiday-calendar"
 import LeaveCalculator from "@/components/leave-calculator"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -13,6 +13,17 @@ import { Button } from "@/components/ui/button"
 export default function Home() {
   const calculatorTabRef = useRef<HTMLDivElement>(null)
   const [activeTab, setActiveTab] = useState("calendar")
+
+  useEffect(() => {
+    const handleTabSwitch = (event: CustomEvent) => {
+      setActiveTab(event.detail)
+    }
+
+    window.addEventListener('switchTab', handleTabSwitch as EventListener)
+    return () => {
+      window.removeEventListener('switchTab', handleTabSwitch as EventListener)
+    }
+  }, [])
 
   const scrollToCalculator = () => {
     setActiveTab("calculator")

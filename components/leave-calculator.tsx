@@ -246,7 +246,7 @@ export default function LeaveCalculator() {
           <p className="text-muted-foreground max-w-md mb-4">
             Kamu bisa juga membuat template surat cuti lho!
           </p>
-          <Button variant="outline" onClick={() => window.location.href = '/leave-letter'} className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white">
+          <Button variant="outline" onClick={() => window.dispatchEvent(new CustomEvent('switchTab', { detail: 'templates' }))} className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white">
             <FileText className="mr-2 h-4 w-4 text-white" />
             Buat Template Surat Cuti
           </Button>
