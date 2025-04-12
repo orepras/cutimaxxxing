@@ -62,7 +62,7 @@ const formSchema = z.object({
     .max(30, {
       message: "Jumlah hari cuti maksimal 30 hari.",
     }),
-  quarter: z.enum(["Q1", "Q2", "Q3", "Q4"]).optional(),
+  quarter: z.enum(["Q1", "Q2", "Q3", "Q4"]),
   year: z.coerce.number().min(2024).max(2025),
 })
 
@@ -74,6 +74,7 @@ export default function LeaveCalculator() {
     defaultValues: {
       availableLeaveDays: 12,
       year: new Date().getFullYear(),
+      quarter: "Q2",
     },
   })
 
@@ -108,11 +109,11 @@ export default function LeaveCalculator() {
               name="quarter"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Kuartal (Opsional)</FormLabel>
+                  <FormLabel>Periode</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Semua Kuartal" />
+                        <SelectValue />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
@@ -122,7 +123,7 @@ export default function LeaveCalculator() {
                       <SelectItem value="Q4">Q4 (Okt-Des)</SelectItem>
                     </SelectContent>
                   </Select>
-                  <FormDescription>Fokus pada kuartal tertentu</FormDescription>
+                  <FormDescription>Pilih periode yang diinginkan</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
