@@ -46,16 +46,16 @@ export default function Home() {
             onValueChange={setActiveTab}
             className="w-full max-w-5xl mx-auto"
           >
-            <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="calendar">
+            <TabsList className="grid w-full grid-cols-3 mb-8 sticky top-4 z-10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 rounded-lg shadow-sm">
+              <TabsTrigger value="calendar" className="data-[state=active]:bg-green-500 data-[state=active]:text-white">
                 <CalendarClock className="mr-2 h-4 w-4" />
                 Kalender Libur
               </TabsTrigger>
-              <TabsTrigger value="calculator">
+              <TabsTrigger value="calculator" className="data-[state=active]:bg-green-500 data-[state=active]:text-white">
                 <Calculator className="mr-2 h-4 w-4" />
                 Kalkulator Cuti
               </TabsTrigger>
-              <TabsTrigger value="templates">
+              <TabsTrigger value="templates" className="data-[state=active]:bg-green-500 data-[state=active]:text-white">
                 <FileText className="mr-2 h-4 w-4" />
                 Template Surat
               </TabsTrigger>
