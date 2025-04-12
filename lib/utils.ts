@@ -31,7 +31,9 @@ export function isWeekend(date: Date): boolean {
 }
 
 export function isHoliday(date: Date, holidays: Holiday[]): Holiday | undefined {
-  const dateString = date.toISOString().split("T")[0]
+  // Convert the input date to local date string (YYYY-MM-DD)
+  const localDate = new Date(date.getTime() - date.getTimezoneOffset() * 60000)
+  const dateString = localDate.toISOString().split('T')[0]
   return holidays.find((holiday) => holiday.date === dateString)
 }
 

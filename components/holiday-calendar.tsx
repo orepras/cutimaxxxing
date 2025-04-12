@@ -6,18 +6,24 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { Switch } from "@/components/ui/switch"
+import { Label } from "@/components/ui/label"
 import { holidays2024, holidays2025 } from "@/lib/holidays"
 import { formatDate, isHoliday, isWeekend } from "@/lib/utils"
 
 export default function HolidayCalendar() {
   const [year, setYear] = useState<number>(new Date().getFullYear())
   const [month, setMonth] = useState<Date>(new Date())
+  const [showCutiBersama, setShowCutiBersama] = useState<boolean>(true)
 
   const holidays = year === 2024 ? holidays2024 : holidays2025
+  const filteredHolidays = showCutiBersama 
+    ? holidays 
+    : holidays.filter(holiday => !holiday.description?.includes("Cuti Bersama BI"))
 
   // Function to customize calendar day rendering
   const renderDay = (day: Date) => {
-    const holiday = isHoliday(day, holidays)
+    const holiday = isHoliday(day, filteredHolidays)
     const weekend = isWeekend(day)
 
     if (holiday) {
@@ -57,15 +63,26 @@ export default function HolidayCalendar() {
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row justify-between gap-4">
-        <Select value={year.toString()} onValueChange={(value) => setYear(Number.parseInt(value))}>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Pilih Tahun" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="2024">2024</SelectItem>
-            <SelectItem value="2025">2025</SelectItem>
-          </SelectContent>
-        </Select>
+        <div className="flex items-center gap-4">
+          <Select value={year.toString()} onValueChange={(value) => setYear(Number.parseInt(value))}>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Pilih Tahun" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="2024">2024</SelectItem>
+              <SelectItem value="2025">2025</SelectItem>
+            </SelectContent>
+          </Select>
+
+          <div className="flex items-center space-x-2">
+            <Switch
+              id="cuti-bersama"
+              checked={showCutiBersama}
+              onCheckedChange={setShowCutiBersama}
+            />
+            <Label htmlFor="cuti-bersama">Cuti Bersama</Label>
+          </div>
+        </div>
 
         <div className="flex flex-wrap gap-3">
           <div className="flex items-center gap-2">
@@ -98,7 +115,7 @@ export default function HolidayCalendar() {
       <div className="space-y-4">
         <h3 className="text-lg font-medium">Daftar Libur Nasional {year}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {holidays.map((holiday) => (
+          {filteredHolidays.map((holiday) => (
             <Card key={holiday.date} className="overflow-hidden">
               <CardContent className="p-4">
                 <div className="flex items-start justify-between">

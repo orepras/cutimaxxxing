@@ -90,6 +90,11 @@ export const holidays2025: Holiday[] = [
     type: "national",
   },
   {
+    date: "2025-01-27",
+    name: "Isra Mikraj Nabi Muhammad SAW",
+    type: "religious",
+  },
+  {
     date: "2025-01-28",
     name: "Cuti Bersama Tahun Baru Imlek 2576",
     type: "national",
@@ -101,20 +106,30 @@ export const holidays2025: Holiday[] = [
     type: "religious",
   },
   {
-    date: "2025-03-01",
-    name: "Isra Mikraj Nabi Muhammad SAW",
-    type: "religious",
-  },
-  {
-    date: "2025-03-19",
-    name: "Hari Raya Nyepi",
-    type: "religious",
-  },
-  {
     date: "2025-03-28",
-    name: "Cuti Bersama Hari Suci Nyepi",
+    name: "Cuti bersama Hari Suci Nyepi 1947",
     type: "national",
     description: "Cuti Bersama BI",
+  },
+  {
+    date: "2025-03-29",
+    name: "Hari Raya Nyepi Tahun Baru Saka 1947",
+    type: "religious",
+  },
+  {
+    date: "2025-03-30",
+    name: "Hari Raya Idul Fitri 1446 H",
+    type: "religious",
+  },
+  {
+    date: "2025-03-31",
+    name: "Hari Raya Idul Fitri 1446 H",
+    type: "religious",
+  },
+  {
+    date: "2025-04-01",
+    name: "Hari Raya Idul Fitri 1446 H",
+    type: "national",
   },
   {
     date: "2025-04-02",
@@ -142,17 +157,12 @@ export const holidays2025: Holiday[] = [
   },
   {
     date: "2025-04-18",
-    name: "Wafat Isa Al Masih",
+    name: "Wafat Yesus Kristus",
     type: "religious",
   },
   {
-    date: "2025-03-31",
-    name: "Hari Raya Idul Fitri 1446 H",
-    type: "religious",
-  },
-  {
-    date: "2025-04-01",
-    name: "Hari Raya Idul Fitri 1446 H",
+    date: "2025-04-20",
+    name: "Kebangkitan Yesus Kristus",
     type: "religious",
   },
   {
@@ -161,14 +171,19 @@ export const holidays2025: Holiday[] = [
     type: "national",
   },
   {
+    date: "2025-05-12",
+    name: "Hari Raya Waisak 2569 BE",
+    type: "national",
+   },
+{
     date: "2025-05-13",
-    name: "Cuti Bersama Hari Raya Waisak",
+    name: "Cuti Bersama Hari Raya Waisak 2569 BE",
     type: "national",
     description: "Cuti Bersama BI",
   },
   {
     date: "2025-05-29",
-    name: "Kenaikan Isa Al Masih",
+    name: "Kenaikan Yesus Kristus",
     type: "religious",
   },
   {
@@ -183,20 +198,15 @@ export const holidays2025: Holiday[] = [
     type: "national",
   },
   {
-    date: "2025-06-09",
-    name: "Cuti Bersama Idul Adha",
-    type: "national",
-    description: "Cuti Bersama BI",
-  },
-  {
-    date: "2025-06-12",
-    name: "Hari Raya Waisak",
-    type: "religious",
-  },
-  {
     date: "2025-06-07",
     name: "Hari Raya Idul Adha 1446 H",
     type: "religious",
+  },
+  {
+    date: "2025-06-09",
+    name: "Cuti Bersama Idul Adha 1446 H",
+    type: "national",
+    description: "Cuti Bersama BI",
   },
   {
     date: "2025-06-27",
