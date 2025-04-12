@@ -86,6 +86,7 @@ export function calculateOptimalLeave(
       const daysBetween = Math.abs(holidayDate.getTime() - cutiBersamaDate.getTime()) / (24 * 60 * 60 * 1000)
 
       if (daysBetween <= 7) { // If Cuti Bersama is within a week
+        const cutiBersamaDayName = getDayName(cutiBersamaDate)
         recommendations.push({
           id: `strategy-${index}-cuti-bersama`,
           strategy: "Long Weekend",
@@ -95,7 +96,7 @@ export function calculateOptimalLeave(
             start: new Date(cutiBersamaDate.getTime() - (24 * 60 * 60 * 1000)).toISOString().split("T")[0], // Start from Sunday
             end: new Date(cutiBersamaDate.getTime() + (2 * 24 * 60 * 60 * 1000)).toISOString().split("T")[0], // End on Wednesday
           },
-          description: `Ambil cuti pada hari Senin sebelum libur ${cutiBersama.name} untuk mendapatkan 4 hari libur berturut-turut.`,
+          description: `Ambil cuti pada hari ${cutiBersamaDayName} pada libur ${cutiBersama.name} untuk mendapatkan 4 hari libur berturut-turut.`,
         })
         return // Skip other strategies for this holiday
       }
@@ -106,6 +107,7 @@ export function calculateOptimalLeave(
       // Thursday
       const fridayDate = new Date(holidayDate)
       fridayDate.setDate(holidayDate.getDate() + 1)
+      const fridayDayName = getDayName(fridayDate)
 
       // Check if there's a Cuti Bersama before the holiday
       const cutiBersamaBefore = holidays.find(h => {
@@ -152,7 +154,7 @@ export function calculateOptimalLeave(
             start: holidayDate.toISOString().split("T")[0],
             end: new Date(holidayDate.getTime() + 3 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
           },
-          description: `Ambil cuti pada hari Jumat setelah libur ${holiday.name} untuk mendapatkan 4 hari libur berturut-turut.`,
+          description: `Ambil cuti pada hari ${fridayDayName} setelah libur ${holiday.name} untuk mendapatkan 4 hari libur berturut-turut.`,
         })
       }
     }
@@ -162,6 +164,7 @@ export function calculateOptimalLeave(
       // Tuesday
       const mondayDate = new Date(holidayDate)
       mondayDate.setDate(holidayDate.getDate() - 1)
+      const mondayDayName = getDayName(mondayDate)
 
       recommendations.push({
         id: `strategy-${index}-2`,
@@ -172,7 +175,7 @@ export function calculateOptimalLeave(
           start: new Date(holidayDate.getTime() - 3 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
           end: holidayDate.toISOString().split("T")[0],
         },
-        description: `Ambil cuti pada hari Senin sebelum libur ${holiday.name} untuk mendapatkan 4 hari libur berturut-turut.`,
+        description: `Ambil cuti pada hari ${mondayDayName} sebelum libur ${holiday.name} untuk mendapatkan 4 hari libur berturut-turut.`,
       })
     }
 
