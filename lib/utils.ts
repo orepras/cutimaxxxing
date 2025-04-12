@@ -69,23 +69,92 @@ export function calculateOptimalLeave(
     const holidayDate = new Date(holiday.date)
     const dayOfWeek = holidayDate.getDay() // 0 (Sunday) to 6 (Saturday)
 
+    // Skip if this is a Cuti Bersama
+    if (holiday.description?.includes("Cuti Bersama")) {
+      return
+    }
+
+    // Check if there's a Cuti Bersama associated with this holiday
+    const cutiBersama = holidays.find(h => {
+      const hDate = new Date(h.date)
+      return h.description?.includes("Cuti Bersama") && 
+             h.name.includes(holiday.name) // Check if Cuti Bersama is related to this holiday
+    })
+
+    if (cutiBersama) {
+      const cutiBersamaDate = new Date(cutiBersama.date)
+      const daysBetween = Math.abs(holidayDate.getTime() - cutiBersamaDate.getTime()) / (24 * 60 * 60 * 1000)
+
+      if (daysBetween <= 7) { // If Cuti Bersama is within a week
+        recommendations.push({
+          id: `strategy-${index}-cuti-bersama`,
+          strategy: "Long Weekend",
+          leaveDates: [cutiBersama.date],
+          totalDays: 4,
+          holidayPeriod: {
+            start: new Date(cutiBersamaDate.getTime() - (24 * 60 * 60 * 1000)).toISOString().split("T")[0], // Start from Sunday
+            end: new Date(cutiBersamaDate.getTime() + (2 * 24 * 60 * 60 * 1000)).toISOString().split("T")[0], // End on Wednesday
+          },
+          description: `Ambil cuti pada hari Senin sebelum libur ${cutiBersama.name} untuk mendapatkan 4 hari libur berturut-turut.`,
+        })
+        return // Skip other strategies for this holiday
+      }
+    }
+
     // Strategy 1: Thursday holiday - take Friday off for a 4-day weekend
     if (dayOfWeek === 4) {
       // Thursday
       const fridayDate = new Date(holidayDate)
       fridayDate.setDate(holidayDate.getDate() + 1)
 
-      recommendations.push({
-        id: `strategy-${index}-1`,
-        strategy: "Long Weekend",
-        leaveDates: [fridayDate.toISOString().split("T")[0]],
-        totalDays: 4, // Thursday (holiday) + Friday (leave) + Saturday + Sunday
-        holidayPeriod: {
-          start: holidayDate.toISOString().split("T")[0],
-          end: new Date(holidayDate.getTime() + 3 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
-        },
-        description: `Ambil cuti pada hari Jumat setelah libur ${holiday.name} untuk mendapatkan 4 hari libur berturut-turut.`,
+      // Check if there's a Cuti Bersama before the holiday
+      const cutiBersamaBefore = holidays.find(h => {
+        const hDate = new Date(h.date)
+        return h.description?.includes("Cuti Bersama") && 
+               hDate.getTime() < holidayDate.getTime() &&
+               Math.abs(hDate.getTime() - holidayDate.getTime()) <= 7 * 24 * 60 * 60 * 1000 // within 7 days
       })
+
+      if (cutiBersamaBefore) {
+        // If there's a Cuti Bersama nearby, recommend taking days between them
+        const startDate = new Date(cutiBersamaBefore.date)
+        const endDate = new Date(holidayDate)
+        const daysBetween = Math.ceil((endDate.getTime() - startDate.getTime()) / (24 * 60 * 60 * 1000))
+        
+        if (daysBetween <= availableLeaveDays) {
+          const leaveDates = []
+          for (let i = 1; i < daysBetween; i++) {
+            const date = new Date(startDate)
+            date.setDate(startDate.getDate() + i)
+            leaveDates.push(date.toISOString().split("T")[0])
+          }
+
+          recommendations.push({
+            id: `strategy-${index}-1a`,
+            strategy: "Extended Long Weekend",
+            leaveDates,
+            totalDays: daysBetween + 2, // Include the Cuti Bersama and holiday
+            holidayPeriod: {
+              start: startDate.toISOString().split("T")[0],
+              end: holidayDate.toISOString().split("T")[0],
+            },
+            description: `Ambil cuti ${daysBetween - 1} hari antara ${formatDate(startDate)} dan ${formatDate(holidayDate)} untuk mendapatkan ${daysBetween + 2} hari libur berturut-turut.`,
+          })
+        }
+      } else {
+        // Original strategy for Thursday holiday
+        recommendations.push({
+          id: `strategy-${index}-1`,
+          strategy: "Long Weekend",
+          leaveDates: [fridayDate.toISOString().split("T")[0]],
+          totalDays: 4, // Thursday (holiday) + Friday (leave) + Saturday + Sunday
+          holidayPeriod: {
+            start: holidayDate.toISOString().split("T")[0],
+            end: new Date(holidayDate.getTime() + 3 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
+          },
+          description: `Ambil cuti pada hari Jumat setelah libur ${holiday.name} untuk mendapatkan 4 hari libur berturut-turut.`,
+        })
+      }
     }
 
     // Strategy 2: Tuesday holiday - take Monday off for a 4-day weekend
