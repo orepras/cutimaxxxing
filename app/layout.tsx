@@ -4,8 +4,6 @@ import type { Metadata } from "next"
 import { Inter, Noto_Serif } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import Link from "next/link"
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
 
 const inter = Inter({ 
@@ -101,8 +99,6 @@ export default function RootLayout({
             </footer>
           </div>
         </ThemeProvider>
-        <Analytics/>
-        <SpeedInsights/>
       </body>
     </html>
   )
